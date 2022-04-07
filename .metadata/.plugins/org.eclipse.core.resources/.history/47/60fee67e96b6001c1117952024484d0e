@@ -1,0 +1,16 @@
+package entidades;
+
+public class Vendedor extends Empleado {
+ private double  porcenComision;
+ private int totalVentas;
+ 
+ public Vendedor(int dni, String nombre, String apellido, String mail, int sueldoBase, float porcenComision, int totalVentas){
+  super( dni,  nombre, apellido, mail, sueldoBase);
+  this.porcenComision=porcenComision;
+  this.totalVentas=totalVentas;
+ }
+ 
+ double getSueldo(int sueldoBase){
+  return super.getSueldo() + (this.porcenComision*this.totalVentas/100);
+ }
+}
